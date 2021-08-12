@@ -8,7 +8,7 @@ const aboutUs = () => {
      <div className = "about-us">
          {qualities.map((ele) => {
              return (
-             <div className = "card">
+             <div className = "card-type">
                  <div className = "card-heading">{ele}</div>
                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
              </div>)

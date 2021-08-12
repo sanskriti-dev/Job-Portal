@@ -3,6 +3,8 @@ import Home from './components/Home';
 import Header from './components/Common/Header';
 import LoginForm from './components/Access/Login';
 import SignUpForm from './components/Access/SignUp';
+import ForgotPasswordForm from './components/Access/Forgot Password';
+import ResetPasswordForm from './components/Access/Reset Password';
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       <Header/>
       {/* <Home/> */}
       {/* <LoginForm/> */}
-      <SignUpForm/>
+      {/* <SignUpForm/> */}
+      {/* <ForgotPasswordForm/> */}
+      <ResetPasswordForm/>
     </div>
   );
 }
