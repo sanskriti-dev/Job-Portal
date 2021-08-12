@@ -4,7 +4,7 @@ import AboutUs from './dependencies/About-Us';
 import Companies from './dependencies/Companies';
 import './home.scss'
 
-const home = () => {
+const Home = () => {
     return(
             <div className = "outer-wrapper">
             <div className = "head-wrap">
@@ -28,4 +28,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home

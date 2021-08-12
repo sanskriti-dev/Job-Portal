@@ -3,6 +3,8 @@ import { Form,Input,Button } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
+import {withRouter} from 'react-router-dom';
+
 
 const Login = () => {
                 
@@ -31,4 +33,4 @@ const Login = () => {
 
 const LoginForm = Card(Login)
 
-export default LoginForm
+export default  withRouter(LoginForm)

@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.scss'
 
-const header = () => {
+const Header = () => {
     return (
     <div className = "header-wrapper">
         <div className = "top-view">
@@ -14,4 +14,4 @@ const header = () => {
     )
 }
 
-export default header
+export default Header
