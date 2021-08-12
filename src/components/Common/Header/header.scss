@@ -1,0 +1,15 @@
+.header-wrapper {
+    position: relative;
+  
+}
+
+.top-view {
+    background: transparent linear-gradient(253deg, #303F60 0%, #1A253C 100%) 0% 0% no-repeat padding-box;
+    height: 400px;
+    header {
+        display: flex;
+        padding: 15px 50px 0px 50px;
+        font-weight: 900;
+        font-size: 20px;
+    }   
+}
