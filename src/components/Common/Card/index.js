@@ -1,12 +1,15 @@
 import React from 'react';
+import './card.scss'
 
-const card = () => {
-    return ( 
-        <div>
-            
-        </div>
-    )
+const Card = (WrappedComponent) => {
+    return (props) =>  {
+     return (
+          <div className = "card">          
+             <WrappedComponent/>
+            </div>
+            )
+        }    
 
 }
 
-export default card
+export default Card
