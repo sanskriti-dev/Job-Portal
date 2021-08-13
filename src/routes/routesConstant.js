@@ -5,9 +5,6 @@ import ForgotPasswordForm from '../components/Access/Forgot Password';
 import ResetPasswordForm from '../components/Access/Reset Password';
 import Home from '../components/Home';
 
-
-
-
 export const URL = {
     "LOGIN" : "/login",
     "SIGNUP": "/sign-up",
@@ -29,7 +26,7 @@ export const publicRoute = [
         public:true,
     },
     {
-        path: `${URL.SIGN_UP}`,
+        path: `${URL.SIGNUP}`,
         component: SignUpForm,
         exact: true,
         public:true,
