@@ -1,0 +1,60 @@
+.dashboard-wrapper {
+    position: absolute;
+    width: 900px;
+    height: 100%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-20%);
+
+    .job-listing {
+        text-align: left;
+        padding: 5px 50px;
+        display: flex;
+        color: #fff;
+        flex-direction: column;
+        .title {
+            margin-top: 20px;
+            font-size: 22px;
+
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+        svg {
+             margin-right: 6px;
+        }
+    }
+
+
+.create-job{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    svg {
+        height : 70px;
+        width : 100px;
+        color: #cbd2dd;
+        margin-bottom: 20px;
+
+    }
+    button {
+        margin-top: 25px;
+    }
+
+    div {
+        color: #303F60;
+        opacity: 0.8;
+        font-size: 15px;
+        font-weight: 600;
+    }   
+}
+
+}
+
+.top-view {
+    height: 200px;
+
+}

@@ -2,14 +2,13 @@ import * as actionTypes from '../action/actionTypes'
 
 const initialState = {
     token : null,
-    userId : null,
-    error : null ,
-    loading : false,
-    authRedirectPath : "/"
+    userName : null,
+    email :null,
+    isloggedIn : false
 }
 
-const reducer = (state =initialState,action) => {
-    switch (action.type) {
+const reducer = (state =initialState,payload) => {
+    switch (payload.type) {
         case actionTypes.AUTH_START :
             return {
                 ...state,
@@ -19,15 +18,15 @@ const reducer = (state =initialState,action) => {
         case actionTypes.AUTH_SUCCESS :
             return {
                 ...state,
-                token : action.token,
-                userId : action.userId,
-                error : null,
-                loading : false
+                token : payload.payload.token,
+                email : payload.payload.email,
+                userName : payload.payload.name,
+                isloggedIn:true
              }
          case actionTypes.AUTH_FAIL : 
          return {
              ...state,
-             error :action.error,
+             error :payload.error,
              loading : false
 
          }
@@ -37,11 +36,7 @@ const reducer = (state =initialState,action) => {
               token : null,
               userId :null
           }
-        //   case actionTypes.SET_AUTH_REDIRECT_PATH :
-        //       return {
-        //           ...state,
-        //           authRedirectPath : action.path
-        //       }     
+        
          default : return {
              ...state
          }   

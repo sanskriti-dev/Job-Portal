@@ -6,6 +6,8 @@ import SignUpForm from './components/Access/SignUp';
 import ForgotPasswordForm from './components/Access/Forgot Password';
 import ResetPasswordForm from './components/Access/Reset Password';
 import Routes from './routes';
+import DashBoard from './components/Recruiter';
+import CreateJobForm from './components/Recruiter/dependencies/CreateJob';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       {/* <SignUpForm/> */}
       {/* <ForgotPasswordForm/> */}
       {/* <ResetPasswordForm/> */}
+      {/* <Header/>
+      <DashBoard/> */}
     </div>
   );
 }

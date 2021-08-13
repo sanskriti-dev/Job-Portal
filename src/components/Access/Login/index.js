@@ -1,18 +1,27 @@
 import React from 'react';
-import { Form,Input,Button, notification, message } from 'antd';
+import { Form,Input,Button, notification } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
-import {Link, withRouter} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {AuthServices} from '../api/services';
+import { useDispatch, useSelector } from 'react-redux';
+import * as  actions from '../../../store/action/'
+import { AUTH_SUCCESS } from '../../../store/action/actionTypes';
 
 
 const Login = (props) => {
+    const dispatch = useDispatch();
+    const state = useSelector(state => console.log(state))
+    const history = useHistory()
+
+    console.log(state)
     const handleLogin = async (values) => {
         const response = await AuthServices.login(values);
-        console.log(response)
         if(response.data.success)
         {
+            history.push('/dashboard')
+            dispatch({type : AUTH_SUCCESS,payload : response.data.data})
             notification["success"]({
                 message: <strong>LoggedIn Successfully</strong>,
             });
@@ -48,12 +57,6 @@ const Login = (props) => {
 
 const LoginForm = Card(Login)
 
-const mapStatetoProps = () => {
 
-}
 
-const mapDispatchtoProps =() => {
-
-}
-
-export default  withRouter(LoginForm)
+export default LoginForm
