@@ -3,12 +3,11 @@ import { Form,Input,Button, notification, message } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {AuthServices} from '../api/services';
 
 
-const Login = () => {
-
+const Login = (props) => {
     const handleLogin = async (values) => {
         const response = await AuthServices.login(values);
         console.log(response)
@@ -29,7 +28,10 @@ const Login = () => {
               <Form.Item name = "email">
                   <Input placeholder = "Enter your email"/>
               </Form.Item>
+              <div className = "forgot-password-field">
               <label className = "field-label">Password</label>
+              <Link to = "/forgot-password" className= "create-account-text" >Forgot your password?</Link>
+              </div>
               <Form.Item name = "password">
               <Input.Password placeholder = "Enter your Password"/>
               </Form.Item>
@@ -38,7 +40,7 @@ const Login = () => {
           </Button>
           </Form>
 
-          <span className= "more-jobs">Need to MyJobs? <span className= "create-account-text" >Create an account</span></span>
+          <span className= "more-jobs">Need to MyJobs? <Link to = "/sign-up" className= "create-account-text" >Create an account</Link></span>
         </>
     )
 
@@ -53,4 +55,5 @@ const mapStatetoProps = () => {
 const mapDispatchtoProps =() => {
 
 }
+
 export default  withRouter(LoginForm)

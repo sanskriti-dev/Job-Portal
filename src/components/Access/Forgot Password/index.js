@@ -3,14 +3,29 @@ import { Form,Input,Button } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
+import { AuthServices } from '../api/services';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 
-const ForgotPassword = () => {
+const ForgotPassword = (props) => {
+    let history = useHistory()
+
+    const handleResetPassword = async (values) => {
+        const response = await AuthServices.resetPassword(values?.email);
+        console.log(response)
+        if(response.data.success)
+        {
+            console.log("INN");
+            history.push('/reset-password')
+
+        }
+
+    }
                 
     return (
         <>
         <span className = "title">Forgot your password?</span>
         <span className = "extra-text">Enter the email associated with your account and we’ll send you instructions to reset your password.</span>
-          <Form>
+          <Form onFinish = {handleResetPassword}>
               <label className = "field-label">Email Address</label>
               <Form.Item name = "email">
                   <Input placeholder = "Enter your email"/>

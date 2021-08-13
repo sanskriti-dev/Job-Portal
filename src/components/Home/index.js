@@ -4,7 +4,7 @@ import AboutUs from './dependencies/About-Us';
 import Companies from './dependencies/Companies';
 import './home.scss'
 
-const Home = () => {
+const Home = (props) => {
     return(
             <div className = "outer-wrapper">
             <div className = "head-wrap">

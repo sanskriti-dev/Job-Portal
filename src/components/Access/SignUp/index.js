@@ -5,6 +5,7 @@ import Card from '../../Common/Card';
 import {SolutionOutlined,UserOutlined} from '@ant-design/icons';
 import '../access.scss'
 import { AuthServices } from '../api/services';
+import { Link } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -18,7 +19,7 @@ const SignUp = () => {
         if(response.success)
         {
             notification["success"]({
-                message: <strong>LoggedIn Successfully</strong>,
+                message: <strong>Registered Successfully</strong>,
             });
 
         }
@@ -70,7 +71,7 @@ const SignUp = () => {
           </Button>
           </Form>
 
-          <span className= "more-jobs">Have an account? <span className= "create-account-text" >Login</span></span>
+          <span className= "more-jobs">Have an account? <Link to = "/login" className= "create-account-text" >Login</Link></span>
         </>
     )
 

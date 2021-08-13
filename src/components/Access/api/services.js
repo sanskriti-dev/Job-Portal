@@ -10,7 +10,7 @@ class AuthService {
 
     }
     resetPassword = (data) => {
-        return axios.post(`${ROOT_URL}/auth/resetpassword`,data)
+        return axios.get(`${ROOT_URL}/auth/resetpassword?email=${data}`)
     }
 }
 
