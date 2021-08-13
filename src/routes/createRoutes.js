@@ -11,7 +11,7 @@ const RouteWithSubRoutes = (route) => {
                             <>
                                  <Header/>
                                  <route.component {...props} routes={route.routes}/>
-/                                
+                                
                             </>
                         )
                 }}

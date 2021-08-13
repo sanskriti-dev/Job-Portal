@@ -1,0 +1,35 @@
+
+.applicants-modal{   
+    .applicant-title {
+        font-size: 20px;
+        margin-bottom: 23px;
+        border-bottom: 2px solid #557DA526;
+        color: #303F60;
+    }
+
+    .applicants {
+        height: 60Vh;
+        background: #A9AFBC;
+        opacity: 0.2;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .no-applicants {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            svg {
+                width: 100px;
+                height: 100px;
+            }
+            span{
+                color: #303F60;
+                font-size: 16px;
+            }
+        }
+    }
+
+
+}
