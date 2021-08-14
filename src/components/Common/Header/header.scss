@@ -8,15 +8,45 @@
     height: 400px;
     header {
         display: flex;
-        padding: 15px 50px 0px 50px;
+        margin: 0px 50px 0px 50px;
+        padding-top: 15px;        
         font-weight: 900;
         font-size: 20px;
         justify-content: space-between;
+        border-bottom: 1px solid #727272;
+        padding-bottom: 9px;
         button{
             border: 1px #43AFFF solid;
             background: #43AFFF33;
             color:#fff;
 
         }
-    }   
+    }
+    .nav-wrapper {
+        display: flex;
+        align-items: center;
+    .post {
+          font-size: 14px;
+          color: #FFFFFF;
+          opacity: 0.8;
+          margin-right: 40px;
+    }
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+
+
+    .name-logo {
+        background: #D9EFFF;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        color: #303F60;
+    }
+}
+}
+     
 }

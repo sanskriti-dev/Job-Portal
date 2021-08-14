@@ -2,7 +2,7 @@ import * as actionTypes from '../action/actionTypes'
 
 const initialState = {
     token : null,
-    userName : null,
+    name : null,
     email :null,
     isloggedIn : false
 }
@@ -20,7 +20,7 @@ const reducer = (state =initialState,payload) => {
                 ...state,
                 token : payload.payload.token,
                 email : payload.payload.email,
-                userName : payload.payload.name,
+                name : payload.payload.name,
                 isloggedIn:true
              }
          case actionTypes.AUTH_FAIL : 
@@ -34,7 +34,9 @@ const reducer = (state =initialState,payload) => {
           return {
               ...state , 
               token : null,
-              userId :null
+              name :null,
+              isloggedIn: false,
+              email:null
           }
         
          default : return {

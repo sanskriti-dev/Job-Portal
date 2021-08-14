@@ -43,7 +43,7 @@ const DashBoard = (props) => {
             <HomeFilled />
             <span>Home</span>
             </div>
-            <span className = "title">Jobs post by you</span>
+            <span className = "title">Jobs posted by you</span>
             </div>   
             <div className = "jobs">
                 {postedJobs?.map(ele => <JobCard {...ele}/>)}
