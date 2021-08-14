@@ -16,11 +16,20 @@ const DashBoard = (props) => {
     const state = useSelector(state => state?.auth)
     const [jobsCount , setJobsCount] = useState()
     const [postedJobs, setPostedJobs] = useState([])
+    const [activePage ,setActivePage] = useState(1)
+    const [defaultPageSize, setDefaultPageSize] = useState(10);
+    const indexOfLastJobPost = activePage * defaultPageSize;
+    const indexOfFirstjobPost = indexOfLastJobPost - defaultPageSize;
+    const conditionPaginatedData = postedJobs.slice(indexOfFirstjobPost,indexOfLastJobPost)
 
     useEffect(() => {
         allPostedJobs()
     },[state.token])
 
+    const handlePagination = (page) => {
+        setActivePage(page);
+
+    }
 
     const allPostedJobs = async () => {
         const response =  await RecruiterServices.getPostedJobs(state?.token)
@@ -45,20 +54,21 @@ const DashBoard = (props) => {
             <span className = "title">Jobs posted by you</span>
             </div>   
             <div className = "jobs">
-                {postedJobs?.map(ele => <JobCard {...ele}/>)}
+                {conditionPaginatedData?.map(ele => <JobCard {...ele}/>)}
             </div>
-            
-            
-         
-         
-         
+             
         {!jobsCount ?  
         <div className = "create-job">
          <EditOutlined />
          <div>Your posted jobs will show here!</div>
          <Button type = "primary" onClick = {() => history.push('/create-job') }>Post a job</Button>
          </div> : null }
-      <Pagination className = "pagination" defaultCurrent={1} />
+      <Pagination className = "pagination" 
+        current={activePage}
+        onChange={(page) => handlePagination(page)}
+        total={jobsCount}
+        defaultPageSize={defaultPageSize}
+       />
 
     </div>
     

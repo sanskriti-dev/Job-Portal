@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form,Input,Button } from 'antd';
+import { Form,Input,Button, notification, message } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
@@ -10,17 +10,15 @@ const ForgotPassword = (props) => {
     let history = useHistory()
 
     const handleResetPassword = async (values) => {
+      
         const response = await AuthServices.resetPassword(values?.email);
-        console.log(response)
         if(response.data.success)
         {
-            console.log("INN");
+            const verifyResponse = await AuthServices.verifyPasstoken(response.data.data.token);
+            if(verifyResponse.data.success)
             history.push('/reset-password')
-
-        }
-
-    }
-                
+        }   
+}             
     return (
         <>
         <span className = "title">Forgot your password?</span>

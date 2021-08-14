@@ -38,6 +38,11 @@ export const publicRoute = [
         exact: true,
     },
     {
+        path: `${URL.RESET_PASSWORD}`,
+        component: ResetPasswordForm,
+        exact: true,
+    },
+    {
         path: `*`,
         component: Home,
         exact: false,
@@ -52,11 +57,7 @@ export const mainRoutes = [
         component: DashBoard,
         exact: true,
     },
-    {
-        path: `${URL.RESET_PASSWORD}`,
-        component: ResetPasswordForm,
-        exact: true,
-    },
+   
     
     {
         path: `${URL.CREATE_JOB}`,

@@ -3,8 +3,15 @@ import { Form,Input,Button } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
+import { useHistory } from 'react-router-dom';
 
 const ResetPassword = () => {
+
+    const history = useHistory()
+
+    console.log(history?.location?.state?.token)
+
+
                 
     return (
         <>
