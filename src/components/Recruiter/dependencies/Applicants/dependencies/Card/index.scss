@@ -1,5 +1,6 @@
+@import "../../../../../../variable";
 .applicant-card {
-    background: #fff;
+    background: $white;
     padding: 15px;
     margin: 6px;
     /* margin: 20px; */
@@ -23,14 +24,14 @@
             margin-left: 20px;
             .applicant-name {
                 font-size: 16px;
-                color: #303F60;
+                color: $dark-blue-II;
                 font-weight: 600;
             }
         }
     }
     .applicant-skills {
         font-size: 14px;
-        color: #303F60;
+        color: $dark-blue-II;
         font-weight: 600;
     }
 }

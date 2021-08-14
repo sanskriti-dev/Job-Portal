@@ -1,3 +1,4 @@
+@import '../../variable';
 .outer-wrapper {
     display: flex;
     position: absolute;
@@ -19,13 +20,13 @@
     flex-direction: column;
     top: 135px;
     .heading-text {
-        color: #fff; 
+        color: $white; 
         font-size: 40px;
         text-align: left;
         &.logo {
             font-weight: 800;
             .logo-text {
-                color: #43AFFF;
+                color: $light-blue;
             }
         }
      
@@ -34,14 +35,14 @@
         width: 130px;
        &.btn-primary {
        
-       background-color: #43AFFF;
+       background-color: $light-blue;
     }
    }
  } 
 }
     .home-img {
         width: 460px;
-        box-shadow: 0px 30px 36px #557da526;
+        box-shadow: 0px 30px 36px $dark-blue;
         border-radius: 20px;
         opacity: 1;    
     }

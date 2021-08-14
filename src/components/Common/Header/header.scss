@@ -1,10 +1,7 @@
-.header-wrapper {
-    // position: relative;
-  
-}
+@import '../../../variable.scss';
 
 .top-view {
-    background: transparent linear-gradient(253deg, #303F60 0%, #1A253C 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(253deg, $dark-blue-II 0%, $dark-blue-I 100%) 0% 0% no-repeat padding-box;
     height: 400px;
     header {
         display: flex;
@@ -13,12 +10,12 @@
         font-weight: 900;
         font-size: 20px;
         justify-content: space-between;
-        border-bottom: 1px solid #727272;
+        border-bottom: 1px solid $light-grey;
         padding-bottom: 9px;
         button{
-            border: 1px #43AFFF solid;
-            background: #43AFFF33;
-            color:#fff;
+            border: 1px $light-blue solid;
+            background: $dark-blue;
+            color: $white;
 
         }
     }
@@ -27,7 +24,7 @@
         align-items: center;
     .post {
           font-size: 14px;
-          color: #FFFFFF;
+          color: $white;
           opacity: 0.8;
           margin-right: 40px;
     }
@@ -37,14 +34,14 @@
 
 
     .name-logo {
-        background: #D9EFFF;
+        background: $sky-blue;
         width: 35px;
         height: 35px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 25px;
-        color: #303F60;
+        color: $dark-blue-II;
     }
 }
 }

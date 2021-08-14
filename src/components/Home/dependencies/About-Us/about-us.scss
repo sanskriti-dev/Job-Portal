@@ -1,15 +1,16 @@
+@import '../../../../variable';
 .about-us {
     display: flex;
     text-align: left;
     margin-top: 20px;
     .card-type {
-        background-color: #fff;
+        background-color: $white;
         height: 170px;
         padding: 10px 0px 0px 10px;
         margin: 10px;
 
         .card-heading {
-            color: #43AFFF;
+            color: $light-blue;
             width: 120px;
             padding-bottom: 10px;
             font-weight: 600;

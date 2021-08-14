@@ -1,3 +1,4 @@
+@import '../../variable';
 .dashboard-wrapper {
     position: absolute;
     width: 80vw;
@@ -10,7 +11,7 @@
         text-align: left;
         padding: 15px 0px;
         display: flex;
-        color: #fff;
+        color: $white;
         flex-direction: column;
         .title {
             margin-top: 10px;
@@ -45,7 +46,7 @@
     }
 
     div {
-        color: #303F60;
+        color: $dark-blue-II;
         opacity: 0.8;
         font-size: 15px;
         font-weight: 600;
@@ -71,14 +72,7 @@
 
 }
 
-.ant-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) !important;
-
-}
  .ant-modal-content{
-    box-shadow: 0px 30px 36px #557da526;
+    box-shadow: 0px 30px 36px $dark-blue;
    border-radius: 20px;
 }

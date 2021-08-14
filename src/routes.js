@@ -9,7 +9,6 @@ import {createBrowserHistory} from 'history';
 
 const history = createBrowserHistory();
 
-
 const Routes = () => {
     const store = useSelector(stote => stote?.auth)
     const routes = store?.token ? mainRoutes : publicRoute

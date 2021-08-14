@@ -1,10 +1,10 @@
-
+@import '../../../../variable';
 .applicants-modal{   
     .applicant-title {
         font-size: 20px;
         margin-bottom: 23px;
-        border-bottom: 2px solid #557DA526;
-        color: #303F60;
+        border-bottom: 2px solid $dark-blue;
+        color: $dark-blue-II;
     }
 
     .applicants {
@@ -25,7 +25,7 @@
                 height: 100px;
             }
             span{
-                color: #303F60;
+                color:$dark-blue-II;
                 font-size: 16px;
             }
         }

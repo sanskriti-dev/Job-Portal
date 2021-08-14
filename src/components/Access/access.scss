@@ -1,3 +1,5 @@
+@import '../../variable.scss';
+
 .title {
     margin-bottom: 20px;
     font-size: 20px;
@@ -17,7 +19,7 @@
     font-size: 14px;
 }
 .create-account-text {
-    color: #43AFFF;
+    color: $light-blue;
 }
 .ant-form-item {
 margin-bottom: 15px;
@@ -45,13 +47,13 @@ margin-bottom: 15px;
     justify-content: space-evenly;
 }
 .error {
-    color: #FF0000;
+    color: $red;
     text-align: right;
     margin-bottom: 10px;
    
 }
 .error-border {
-    border: 1px solid #FF0000;
+    border: 1px solid $red;
 
 }
 
