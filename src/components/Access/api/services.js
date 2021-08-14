@@ -15,6 +15,9 @@ class AuthService {
     verifyPasstoken = (data) => {
         return axios.get(`${ROOT_URL}/auth/resetpassword/${data}`)
     }
+    changePassword = (data) => {
+        return axios.post(`${ROOT_URL}/auth/resetpassword`,data)
+    }
 }
 
 export const AuthServices = new AuthService()

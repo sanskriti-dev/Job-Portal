@@ -16,7 +16,7 @@ const ForgotPassword = (props) => {
         {
             const verifyResponse = await AuthServices.verifyPasstoken(response.data.data.token);
             if(verifyResponse.data.success)
-            history.push('/reset-password')
+            history.push('/reset-password',{token:response.data.data.token})
         }   
 }             
     return (

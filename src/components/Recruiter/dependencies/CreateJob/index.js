@@ -31,17 +31,17 @@ const CreateJob = () => {
         <span className = "title">Post a Job</span>
           <Form onFinish = {handleCreateJob}>
               <label className = "field-label">Job title*</label>
-              <Form.Item name = "title">
+              <Form.Item name = "title" rules={[{ required: true, message: 'This field is mandatory.' }]}>
               <Input placeholder = "Enter job title"/>
               </Form.Item>
 
               <label className = "field-label">Description*</label>
-              <Form.Item name = "description">
+              <Form.Item name = "description" rules={[{ required: true, message: 'This field is mandatory.' }]}>
               <TextArea  placeholder = "Enter job description" />
               </Form.Item>
             
               <label className = "field-label">Location*</label>
-              <Form.Item name = "location">
+              <Form.Item name = "location" rules={[{ required: true, message: 'This field is mandatory.' }]}>
               <Input placeholder = "Enter your location"/>
               </Form.Item>
               

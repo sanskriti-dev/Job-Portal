@@ -37,7 +37,8 @@ const Login = (props) => {
         }
         
     }catch(err) {
-        setError(err.response.data.message)
+        setError(err?.response?.data?.message)
+        console.log("Something went wrong!!")
     }
     }
     return (

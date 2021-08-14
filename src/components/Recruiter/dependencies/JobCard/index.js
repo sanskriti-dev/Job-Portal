@@ -12,13 +12,16 @@ const JobCard = (props) => {
    
     const state = useSelector(state => state?.auth)
     const [allApplicants,setAllApplicants] = useState([])
+    const [isLoading , setIsLoading] = useState(false)
 
     const handleAllapplicants = async() => {
         setModalVisible(true)
+        setIsLoading(true)
         const response = await RecruiterServices.getApplicantsForJob(props.id,state?.token)
         if(response.data.success)
         {
            setAllApplicants(response.data.data)
+           setIsLoading(false)
         }
 
     }
@@ -32,9 +35,10 @@ const JobCard = (props) => {
             <div className = "location"><img className ="location-img" src = {LocationImg} alt=""/><span>{props.location}</span></div>
             <Button className ="view-applicants" onClick = { handleAllapplicants }>View Applicants</Button>
         </div>
-
+    {!isLoading
+    ?
       <Modal visible = {modalVisible} onCancel = {() => setModalVisible(false)} footer = {null} ><Applicants applicants = {allApplicants}/></Modal> 
-
+  : null}
     </div>
     )
 }
