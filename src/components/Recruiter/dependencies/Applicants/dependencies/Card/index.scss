@@ -1,0 +1,36 @@
+.applicant-card {
+    background: #fff;
+    padding: 15px;
+    margin: 6px;
+    /* margin: 20px; */
+    margin-right: 0px;
+    border-radius: 10px;
+    border: 1px solid #303F6080;
+    .details {
+        display: flex;
+        margin-bottom: 15px;
+        .name-logo {
+            background: #D9EFFF;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+        }
+
+        .applicant-details{
+            margin-left: 20px;
+            .applicant-name {
+                font-size: 16px;
+                color: #303F60;
+                font-weight: 600;
+            }
+        }
+    }
+    .applicant-skills {
+        font-size: 14px;
+        color: #303F60;
+        font-weight: 600;
+    }
+}

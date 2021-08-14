@@ -9,8 +9,8 @@
 
     .applicants {
         height: 60Vh;
-        background: #A9AFBC;
-        opacity: 0.2;
+        width: 100%;
+        background: #e3e6eb;
         margin-top: 10px;
         display: flex;
         align-items: center;
@@ -28,6 +28,14 @@
                 color: #303F60;
                 font-size: 16px;
             }
+        }
+
+        .applicants-group {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: inherit;
+            width: inherit;
         }
     }
 
