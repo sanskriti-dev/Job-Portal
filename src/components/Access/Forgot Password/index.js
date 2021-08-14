@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
 import '../access.scss'
 import { AuthServices } from '../api/services';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 
 const ForgotPassword = (props) => {
     let history = useHistory()

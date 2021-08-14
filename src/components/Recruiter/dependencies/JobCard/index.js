@@ -29,7 +29,7 @@ const JobCard = (props) => {
         <div className = "_title">{props.title}</div>
         <div className = "desc">{props.description}</div>
         <div className = "_location-wrapper">
-            <div className = "location"><img className ="location-img" src = {LocationImg}/><span>{props.location}</span></div>
+            <div className = "location"><img className ="location-img" src = {LocationImg} alt=""/><span>{props.location}</span></div>
             <Button className ="view-applicants" onClick = { handleAllapplicants }>View Applicants</Button>
         </div>
 

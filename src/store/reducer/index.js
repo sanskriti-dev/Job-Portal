@@ -1,20 +1,19 @@
 import * as actionTypes from '../action/actionTypes'
 
+if(localStorage.getItem("user")){
+var  user = JSON.parse(localStorage.getItem('user'))
+var {token,name,email} = user
+}
 const initialState = {
-    token : null,
-    name : null,
-    email :null,
-    isloggedIn : false
+    token : token ? token : null,
+    name : name ? name: null ,
+    email : email ? email : null,
+    isloggedIn :email ? true : false
 }
 
 const reducer = (state =initialState,payload) => {
     switch (payload.type) {
-        case actionTypes.AUTH_START :
-            return {
-                ...state,
-                loading:true,
-                error:null
-            }
+        
         case actionTypes.AUTH_SUCCESS :
             return {
                 ...state,
@@ -23,13 +22,7 @@ const reducer = (state =initialState,payload) => {
                 name : payload.payload.name,
                 isloggedIn:true
              }
-         case actionTypes.AUTH_FAIL : 
-         return {
-             ...state,
-             error :payload.error,
-             loading : false
-
-         }
+        
          case actionTypes.AUTH_LOGOUT : 
           return {
               ...state , 

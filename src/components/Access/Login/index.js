@@ -5,7 +5,7 @@ import Card from '../../Common/Card';
 import '../access.scss'
 import {Link, useHistory} from 'react-router-dom';
 import {AuthServices} from '../api/services';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AUTH_SUCCESS } from '../../../store/action/actionTypes';
 
 

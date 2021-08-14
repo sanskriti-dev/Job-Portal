@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './index.scss'
 import { FileTextOutlined } from '@ant-design/icons';
-import { RecruiterServices } from '../../api/services';
-import { useSelector } from 'react-redux';
+
 import ApplicantCard from './dependencies/Card';
 
 const Applicants = (props) => {

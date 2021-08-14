@@ -19,7 +19,7 @@ const DashBoard = (props) => {
 
     useEffect(() => {
         allPostedJobs()
-    },[state?.token])
+    },[state.token])
 
 
     const allPostedJobs = async () => {
@@ -32,7 +32,6 @@ const DashBoard = (props) => {
             setPostedJobs(jobs)
             setJobsCount(count)
         }
-        console.log(response)
     } 
 
 

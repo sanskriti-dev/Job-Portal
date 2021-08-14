@@ -21,59 +21,52 @@ export const publicRoute = [
         path: `/`,
         component: Home,
         exact: true,
-        public:true,
     },
     {
         path: `${URL.LOGIN}`,
         component: LoginForm,
         exact: true,
-        public:true,
     },
     {
         path: `${URL.SIGNUP}`,
         component: SignUpForm,
         exact: true,
-        public:true,
     },
     {
         path: `${URL.FORGOT_PASSWORD}`,
         component: ForgotPasswordForm,
         exact: true,
-        public:true,
     },
     {
-        path: `${URL.RESET_PASSWORD}`,
-        component: ResetPasswordForm,
-        exact: true,
-        public:true,
-    },
-    {
-        path: `${URL.RECRUITER_DASHBOARD}`,
-        component: DashBoard,
-        exact: true,
-        public:true,
-    },
-    {
-        path: `${URL.CREATE_JOB}`,
-        component: CreateJobForm,
-        exact: true,
-        public:true,
+        path: `*`,
+        component: Home,
+        exact: false,
     },
 
 ]
 
 export const mainRoutes = [
+   
     {
-        path: `/`,
-        component: Home,
+        path: `${URL.RECRUITER_DASHBOARD}`,
+        component: DashBoard,
+        exact: true,
+    },
+    {
+        path: `${URL.RESET_PASSWORD}`,
+        component: ResetPasswordForm,
         exact: true,
     },
     
-   
-    // {
-    //     path: `*`,
-    //     component: NoPageFound,
-    //     exact: false,
-    //     isPrivate: true
-    // },
+    {
+        path: `${URL.CREATE_JOB}`,
+        component: CreateJobForm,
+        exact: true,
+    },
+    {
+        path: `*`,
+        component: DashBoard,
+        exact: false,
+        isPrivate: true
+    },
 ];
