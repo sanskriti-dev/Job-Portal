@@ -41,7 +41,7 @@ const Header = (props) => {
 
     return (
     <div className = "header-wrapper">
-        <div className = "top-view">
+        <div className = {state?.token ? "top-view top-view-height" : "top-view"}>
            <header>
                 <span style = {{color : "white"}}>My<span style = {{color : "#43AFFF"}}>Jobs</span></span>
              {!state.isloggedIn ?  

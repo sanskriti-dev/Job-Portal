@@ -13,11 +13,11 @@ import { Pagination } from 'antd';
 
 const DashBoard = (props) => {
     const history = useHistory();
+    const defaultPageSize = 10;
     const state = useSelector(state => state?.auth)
     const [jobsCount , setJobsCount] = useState()
     const [postedJobs, setPostedJobs] = useState([])
     const [activePage ,setActivePage] = useState(1)
-    const [defaultPageSize, setDefaultPageSize] = useState(10);
     const indexOfLastJobPost = activePage * defaultPageSize;
     const indexOfFirstjobPost = indexOfLastJobPost - defaultPageSize;
     const conditionPaginatedData = postedJobs.slice(indexOfFirstjobPost,indexOfLastJobPost)
@@ -35,7 +35,6 @@ const DashBoard = (props) => {
         const response =  await RecruiterServices.getPostedJobs(state?.token)
         if(response.data.success)
         {
-            console.log(response.data.data)
             let count =  response.data.data.metadata.count
             let jobs = response.data.data.data
             setPostedJobs(jobs)
@@ -63,6 +62,7 @@ const DashBoard = (props) => {
          <div>Your posted jobs will show here!</div>
          <Button type = "primary" onClick = {() => history.push('/create-job') }>Post a job</Button>
          </div> : null }
+         
       <Pagination className = "pagination" 
         current={activePage}
         onChange={(page) => handlePagination(page)}

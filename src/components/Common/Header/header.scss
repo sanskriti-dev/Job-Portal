@@ -3,6 +3,9 @@
 .top-view {
     background: transparent linear-gradient(253deg, $dark-blue-II 0%, $dark-blue-I 100%) 0% 0% no-repeat padding-box;
     height: 400px;
+    &.top-view-height {
+      height: 200px;
+    }
     header {
         display: flex;
         margin: 0px 50px 0px 50px;
