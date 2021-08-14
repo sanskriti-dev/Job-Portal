@@ -31,32 +31,34 @@ const SignUp = () => {
         <span className = "title">Sign Up</span>
           <Form onFinish = {handleSignUp}>
           <label className = "field-label">I'm a*</label>
-              <Form.Item>
+              <Form.Item >
+                  <div className ="tabs">
               <Button type="primary" icon={<SolutionOutlined />} onClick = {() => setUserRole(0)}>
                     Recruiter
               </Button>
               <Button type="default" disabled icon={<UserOutlined />} onClick = {() => setUserRole(1)}>
                     Candidate
               </Button>
+              </div>
               </Form.Item>
           <label className = "field-label">Full Name*</label>
-              <Form.Item name = "name">
+              <Form.Item name = "name" rules={[{ required: true, message: 'This field is mandatory.' }]} >
                   <Input placeholder = "Enter your full name"/>
               </Form.Item>
               <label className = "field-label">Email Address*</label>
-              <Form.Item name = "email">
+              <Form.Item name = "email"  rules={[{ required: true, message: 'This field is mandatory.' }]}>
                   <Input placeholder = "Enter your email"/>
               </Form.Item>
               <div className = "password-group">
                   <div>
               <label className = "field-label">Create Password*</label>
-              <Form.Item name = "password">
+              <Form.Item name = "password" rules={[{ required: true, message: 'This field is mandatory.' }]}>
               <Input.Password placeholder = "Enter your Password"/>
               </Form.Item>
               </div>
               <div>
               <label className = "field-label">Confirm Password*</label>
-              <Form.Item name = "confirmPassword">
+              <Form.Item name = "confirmPassword" rules={[{ required: true, message: 'This field is mandatory.' }]}>
               <Input.Password placeholder = "Enter your Password"/>
               </Form.Item>
               </div>

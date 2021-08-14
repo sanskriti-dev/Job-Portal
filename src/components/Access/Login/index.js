@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form,Input,Button, notification } from 'antd';
 import 'antd/dist/antd.css';
 import Card from '../../Common/Card';
@@ -12,9 +12,14 @@ import { AUTH_SUCCESS } from '../../../store/action/actionTypes';
 const Login = (props) => {
     const dispatch = useDispatch();
     const history = useHistory()
+    const [errors , setError] = useState()
 
     const handleLogin = async (values) => {
-        const response = await AuthServices.login(values);
+
+        try {
+            const response = await AuthServices.login(values);
+            const responseData = response
+            console.log("Res",responseData)
         if(response.data.success)
         {
             history.push('/dashboard')
@@ -30,23 +35,27 @@ const Login = (props) => {
             }))
 
         }
-
+        
+    }catch(err) {
+        setError(err.response.data.message)
+    }
     }
     return (
         <>
         <span className = "title" >Login</span>
-          <Form  onFinish = {handleLogin}>
+          <Form  onFinish = {handleLogin} onClick= {() => {setError("")}}>
               <label className = "field-label">Email Address</label>
-              <Form.Item name = "email">
-                  <Input placeholder = "Enter your email"/>
+              <Form.Item name = "email"   rules={[{ required: true, message: 'Please enter your email!' }]}>
+                  <Input className =  {errors ? "error-border" : ""}  placeholder = "Enter your email"/>
               </Form.Item>
               <div className = "forgot-password-field">
               <label className = "field-label">Password</label>
               <Link to = "/forgot-password" className= "create-account-text" >Forgot your password?</Link>
               </div>
-              <Form.Item name = "password">
-              <Input.Password placeholder = "Enter your Password"/>
+              <Form.Item name = "password" rules={[{ required: true, message: 'Please enter your password!' }]}>
+              <Input.Password  className =  {errors ? "error-border" : ""}  placeholder = "Enter your Password"/>
               </Form.Item>
+              {errors ? <div className ="error">{errors}</div> : null}
               <Button className ="btn btn-default" type="primary" htmlType="submit">
                    Login
           </Button>
