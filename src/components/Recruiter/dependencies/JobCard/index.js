@@ -20,7 +20,7 @@ const JobCard = (props) => {
         const response = await RecruiterServices.getApplicantsForJob(props.id,state?.token)
         if(response.data.success)
         {
-           setAllApplicants(response.data.data)
+           setAllApplicants(response.data?.data)
            setIsLoading(false)
         }
 

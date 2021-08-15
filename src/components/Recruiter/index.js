@@ -20,7 +20,7 @@ const DashBoard = (props) => {
     const [activePage ,setActivePage] = useState(1)
     const indexOfLastJobPost = activePage * defaultPageSize;
     const indexOfFirstjobPost = indexOfLastJobPost - defaultPageSize;
-    const conditionPaginatedData = postedJobs.slice(indexOfFirstjobPost,indexOfLastJobPost)
+    const conditionPaginatedData = postedJobs?.slice(indexOfFirstjobPost,indexOfLastJobPost)
     const [isLoading,setLoading] = useState(false)
 
     useEffect(() => {
@@ -36,8 +36,8 @@ const DashBoard = (props) => {
         const response =  await RecruiterServices.getPostedJobs(state?.token)
         if(response.data.success)
         {
-            let count = response.data.data.metadata.count
-            let jobs = response.data.data.data
+            let count = response.data?.data?.metadata?.count
+            let jobs = response.data?.data?.data
             setPostedJobs(jobs)
             setJobsCount(count)
             setLoading(false)

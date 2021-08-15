@@ -19,7 +19,6 @@ const Login = (props) => {
         try {
             const response = await AuthServices.login(values);
             const responseData = response
-            console.log("Res",responseData)
         if(response.data.success)
         {
             history.push('/dashboard')
@@ -42,7 +41,7 @@ const Login = (props) => {
     }
     }
     return (
-        <>
+        <div className = "login-form">
         <span className = "title" >Login</span>
           <Form  onFinish = {handleLogin} onClick= {() => {setError("")}}>
               <label className = "field-label">Email Address</label>
@@ -63,7 +62,7 @@ const Login = (props) => {
           </Form>
 
           <span className= "more-jobs">Need to MyJobs? <Link to = "/sign-up" className= "create-account-text" >Create an account</Link></span>
-        </>
+        </div>
     )
 
 }

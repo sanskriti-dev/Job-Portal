@@ -38,8 +38,12 @@ margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
 }
+.ant-form-item-control { 
+    padding-bottom: 5px;
 .ant-form-item-explain-error {
-    text-align: left;
+    position: absolute;
+    bottom: -20px;
+}
 }
 .tabs {
     display: flex;
@@ -54,6 +58,8 @@ margin-bottom: 15px;
 }
 .error-border {
     border: 1px solid $red;
+    position: absolute;
+    top: 30px;
 
 }
 

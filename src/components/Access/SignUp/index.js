@@ -5,26 +5,50 @@ import Card from '../../Common/Card';
 import {SolutionOutlined,UserOutlined} from '@ant-design/icons';
 import '../access.scss'
 import { AuthServices } from '../api/services';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {  AUTH_SUCCESS } from '../../../store/action/actionTypes';
 
 
 const SignUp = () => {
 
     const [userRole,setUserRole] = useState(0)
+    const history = useHistory()
+    const dispatch = useDispatch()
 
     const handleSignUp = async (values) => {
         let formData = values
         formData["userRole"] = userRole 
+        try {
         const response = await AuthServices.signUp(formData);
-        if(response.success)
+        
+       
+            if(response.data.success)
         {
+            history.push('/dashboard')
+            dispatch({type : AUTH_SUCCESS,payload : response.data.data})
             notification["success"]({
                 message: <strong>Registered Successfully</strong>,
             });
+            localStorage.setItem("user" ,JSON.stringify( {
+                token : response.data.data.token,
+                email :response.data.data.token,
+                name : response.data.data.name,
+                isLoggedIn : true
+            }))
 
         }
 
+    }catch(err) {
+        console.log(err.response?.data?.errors)
+        err?.response?.data?.errors?.map(ele => {
+            console.log(Object.values(ele)[0])
+      return  notification["error"]({
+            message: Object.values(ele)[0]
+        })})
+        console.log("Something went wrong!!")
     }
+}
                 
     return (
         <>
